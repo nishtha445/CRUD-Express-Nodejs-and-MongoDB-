@@ -12,7 +12,8 @@ app.use(express.urlencoded({
   app.use(express.static("public"));
 
 app.set('view engine','ejs');
-
+const dotenv = require('dotenv');
+dotenv.config();
 require("./db/conn")
 const Users=require("./models/users");
 app.get("/",async(req,res)=>{
